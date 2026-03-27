@@ -319,10 +319,8 @@ Login with `performance_glitch_user` can take 3–5 seconds longer than normal, 
 ### 5. Checkout step two "Cancel" returns to products, not cart
 Clicking Cancel on the checkout overview (`/checkout-step-two.html`) navigates to `/inventory.html` rather than `/cart.html`. This may be unexpected from a user perspective since the cart items are still populated. This behavior has been asserted as-is.
 
-### 6. No stock / inventory limit enforcement
-The application allows adding unlimited quantities of any item without enforcing stock limits, which is expected for a demo app but worth noting.
 
-### 7. Tax rate is fixed at 8%
+### 6. Tax rate is fixed at 8%
 The tax is always computed as 8% of the subtotal. This is consistent across all test runs and is validated in the checkout tests.
 
 ---
