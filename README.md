@@ -24,9 +24,9 @@ A production-grade end-to-end test automation framework for [SauceDemo](https://
 
 The framework is built around three core principles:
 
-1. **Page Object Model (POM)** — Every page has a dedicated class that encapsulates locators and actions, keeping tests clean and maintenance-friendly.
-2. **Data-Driven Testing** — Users, products, and checkout information live in `test-data/*.json` files. Tests consume this data directly, making it trivial to extend coverage by editing JSON rather than touching test code.
-3. **Custom Fixtures** — An `authenticatedPage` fixture handles login setup/teardown automatically. A `cartWithItemsPage` fixture pre-populates the cart, so cart and checkout tests can focus on their own concerns.
+1. **Page Object Model (POM)** - Every page has a dedicated class that encapsulates locators and actions, keeping tests clean and maintenance-friendly.
+2. **Data-Driven Testing** - Users, products, and checkout information live in `test-data/*.json` files. Tests consume this data directly, making it trivial to extend coverage by editing JSON rather than touching test code.
+3. **Custom Fixtures** - An `authenticatedPage` fixture handles login setup/teardown automatically. A `cartWithItemsPage` fixture pre-populates the cart, so cart and checkout tests can focus on their own concerns.
 
 All locators prefer `data-test` attributes (already present on SauceDemo) for stability, falling back to semantic selectors where needed.
 
