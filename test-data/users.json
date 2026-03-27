@@ -1,0 +1,63 @@
+{
+  "validUsers": [
+    {
+      "username": "standard_user",
+      "password": "secret_sauce",
+      "description": "Standard user with full access"
+    },
+    {
+      "username": "performance_glitch_user",
+      "password": "secret_sauce",
+      "description": "User that simulates performance glitches"
+    },
+    {
+      "username": "problem_user",
+      "password": "secret_sauce",
+      "description": "User that simulates UI/functional problems"
+    }
+  ],
+  "lockedUser": {
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "description": "User that is locked out of the system"
+  },
+  "invalidCredentials": [
+    {
+      "username": "invalid_user",
+      "password": "wrong_password",
+      "description": "Completely invalid credentials"
+    },
+    {
+      "username": "standard_user",
+      "password": "wrong_password",
+      "description": "Valid username, wrong password"
+    },
+    {
+      "username": "invalid_user",
+      "password": "secret_sauce",
+      "description": "Invalid username, valid password"
+    }
+  ],
+  "checkoutInfo": {
+    "valid": {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "postalCode": "10001"
+    },
+    "invalidMissingFirstName": {
+      "firstName": "",
+      "lastName": "Doe",
+      "postalCode": "10001"
+    },
+    "invalidMissingLastName": {
+      "firstName": "Jane",
+      "lastName": "",
+      "postalCode": "10001"
+    },
+    "invalidMissingPostalCode": {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "postalCode": ""
+    }
+  }
+}
