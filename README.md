@@ -202,7 +202,7 @@ saucedemo-playwright-tests/
 
 ## Test Coverage
 
-### `auth.spec.ts` — Authentication
+### `auth.spec.ts` - Authentication
 
 | # | Scenario | Type |
 |---|----------|------|
@@ -219,7 +219,7 @@ saucedemo-playwright-tests/
 | 11 | Logout → lands on login page | Happy path |
 | 12 | Post-logout, protected page redirects to login | Security |
 
-### `products.spec.ts` — Product Catalog
+### `products.spec.ts` - Product Catalog
 
 | # | Scenario | Type |
 |---|----------|------|
@@ -239,7 +239,7 @@ saucedemo-playwright-tests/
 | 14 | Add-to-cart button becomes Remove | Happy path |
 | 15 | Add from detail page → badge updates | Happy path |
 
-### `cart.spec.ts` — Shopping Cart
+### `cart.spec.ts` - Shopping Cart
 
 | # | Scenario | Type |
 |---|----------|------|
@@ -254,7 +254,7 @@ saucedemo-playwright-tests/
 | 9 | Checkout button → step one | Happy path |
 | 10 | Cart item prices match product listing | Data integrity |
 
-### `checkout.spec.ts` — Checkout Flow
+### `checkout.spec.ts` - Checkout Flow
 
 | # | Scenario | Type |
 |---|----------|------|
@@ -272,7 +272,7 @@ saucedemo-playwright-tests/
 | 12 | Cancel step two → products page | Happy path |
 | 13 | Cart items preserved after step one cancel | Edge case |
 
-### `cross-browser.spec.ts` — Cross-Browser & Device
+### `cross-browser.spec.ts` - Cross-Browser & Device
 
 | # | Scenario | Browsers |
 |---|----------|---------|
@@ -304,16 +304,16 @@ saucedemo-playwright-tests/
 
 The following bugs and quirks were observed on SauceDemo during framework development:
 
-### 1. `problem_user` — Broken product images
+### 1. `problem_user` - Broken product images
 All product images on the inventory page display the same wrong image (a dog picture) instead of the correct product photo. The detail page also shows the wrong image. This appears intentional as a test scenario but is documented here for completeness.
 
-### 2. `problem_user` — Add-to-cart broken for some products
+### 2. `problem_user` - Add-to-cart broken for some products
 For `problem_user`, clicking "Add to Cart" on several products does not add the item to the cart and does not update the badge. The button state changes but the cart remains unaffected.
 
-### 3. `problem_user` — Sort does not work
+### 3. `problem_user` - Sort does not work
 Selecting any sort option for `problem_user` does not reorder the product list. The sort dropdown changes value but the order stays the same.
 
-### 4. `performance_glitch_user` — Slow login
+### 4. `performance_glitch_user` - Slow login
 Login with `performance_glitch_user` can take 3–5 seconds longer than normal, occasionally hitting default timeout thresholds on slow CI machines. Tests that use this user explicitly have been written to accommodate this with the global `navigationTimeout` setting.
 
 ### 5. Checkout step two "Cancel" returns to products, not cart
@@ -329,11 +329,11 @@ The tax is always computed as 8% of the subtotal. This is consistent across all 
 
 ## Future Improvements
 
-- **Visual regression testing** — Integrate `@playwright/experimental-ct-react` or Percy/Applitools for screenshot diffing, particularly useful for catching `problem_user` image regressions.
-- **Accessibility checks** — Add `axe-core` via `@axe-core/playwright` to audit each page for WCAG violations.
-- **API-level test setup** — SauceDemo doesn't expose a REST API, but if it did, bypassing the UI for authentication and cart setup via API calls would dramatically speed up test runs.
-- **Parallel shard execution** — Split the test suite across multiple CI machines using `--shard=1/4` etc. to reduce total wall-clock time.
-- **Docker image** — Provide a `Dockerfile` with Node + Playwright browsers pre-installed for fully reproducible local and CI runs.
-- **Allure reporting** — Replace or supplement the HTML reporter with Allure for richer test history, trend graphs, and flakiness tracking.
-- **Environment configuration** — Use a `.env` file (with `dotenv`) for `BASE_URL` and credentials, making it easy to point the suite at staging vs. production.
-- **Performance timing assertions** — Add `page.metrics()` checks for `performance_glitch_user` to assert that login latency stays within an acceptable upper bound.
+- **Visual regression testing** - Integrate `@playwright/experimental-ct-react` or Percy/Applitools for screenshot diffing, particularly useful for catching `problem_user` image regressions.
+- **Accessibility checks** - Add `axe-core` via `@axe-core/playwright` to audit each page for WCAG violations.
+- **API-level test setup** - SauceDemo doesn't expose a REST API, but if it did, bypassing the UI for authentication and cart setup via API calls would dramatically speed up test runs.
+- **Parallel shard execution** - Split the test suite across multiple CI machines using `--shard=1/4` etc. to reduce total wall-clock time.
+- **Docker image** - Provide a `Dockerfile` with Node + Playwright browsers pre-installed for fully reproducible local and CI runs.
+- **Allure reporting** - Replace or supplement the HTML reporter with Allure for richer test history, trend graphs, and flakiness tracking.
+- **Environment configuration** - Use a `.env` file (with `dotenv`) for `BASE_URL` and credentials, making it easy to point the suite at staging vs. production.
+- **Performance timing assertions** - Add `page.metrics()` checks for `performance_glitch_user` to assert that login latency stays within an acceptable upper bound.
